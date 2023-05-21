@@ -1,11 +1,15 @@
 package dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 import model.Prestito;
-import model.Utente;
+import model.elemento;
+
 
 public class PrestitoDAO implements IprestitoDAO {
 
@@ -26,4 +30,20 @@ public class PrestitoDAO implements IprestitoDAO {
 			em.close();
 		}
 	}
+	
+	
+	@Override
+	public List<elemento> ricercaElementiInPrestito(String numeroTesseraUtente) {
+	    TypedQuery<elemento> query = em.createNamedQuery("prestito.findByNumeroTesseraUtente", elemento.class);
+	    query.setParameter("numeroTessera", numeroTesseraUtente);
+	    return query.getResultList();
+	}
+
+	@Override
+	public List<elemento> ricercaPrestitiScadutiNonRestituiti() {
+	    TypedQuery<elemento> query = em.createNamedQuery("prestito.findScadutiNonRestituiti", elemento.class);
+	    return query.getResultList();
+	}
+
+	
 }

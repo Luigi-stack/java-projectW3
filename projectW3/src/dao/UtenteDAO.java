@@ -5,7 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import model.Utente;
-import model.elemento;
+
 
 public class UtenteDAO implements IUtenteDAO {
 

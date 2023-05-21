@@ -13,8 +13,8 @@ import javax.persistence.NamedQuery;
 @NamedQuery(name = "elemento.findByISBN", query = "SELECT e FROM elemento e WHERE e.codiceISBN = :isbn")
 @NamedQuery(name = "elemento.findByAnnoPubblicazione", query = "SELECT e FROM elemento e WHERE e.annoPubblicazione = :anno")
 @NamedQuery(name = "elemento.findByTitolo", query = "SELECT e FROM elemento e WHERE e.titolo LIKE :titolo")
-//@NamedQuery(name = "prestito.findByNumeroTesseraUtente", query = "SELECT p.elemento FROM Prestito p WHERE p.utente.numeroTessera = :numeroTessera AND p.dataRestituzioneEffettiva IS NULL")
-//@NamedQuery(name = "prestito.findScadutiNonRestituiti", query = "SELECT p.elemento FROM Prestito p WHERE p.dataRestituzionePrevista < CURRENT_DATE AND p.dataRestituzioneEffettiva IS NULL")
+@NamedQuery(name = "prestito.findByNumeroTesseraUtente", query = "SELECT p.elemento FROM Prestito p WHERE p.utente.numeroTessera = :numeroTessera AND p.dataRestituzioneEffettiva IS NULL")
+@NamedQuery(name = "prestito.findScadutiNonRestituiti", query = "SELECT p.elemento FROM Prestito p WHERE p.dataRestituzionePrevista < CURRENT_DATE AND p.dataRestituzioneEffettiva IS NULL")
 public abstract class elemento {
 
 	@Id

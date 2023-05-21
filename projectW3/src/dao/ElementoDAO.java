@@ -82,18 +82,4 @@ public class ElementoDAO implements IElementoDAO {
 		    return titoli;
 		}
 
-		
-//		@Override
-//		public List<elemento> ricercaElementiInPrestito(String numeroTesseraUtente) {
-//		    TypedQuery<elemento> query = em.createNamedQuery("prestito.findByNumeroTesseraUtente", elemento.class);
-//		    query.setParameter("numeroTessera", numeroTesseraUtente);
-//		    return query.getResultList();
-//		}
-//
-//		@Override
-//		public List<elemento> ricercaPrestitiScadutiNonRestituiti() {
-//		    TypedQuery<elemento> query = em.createNamedQuery("prestito.findScadutiNonRestituiti", elemento.class);
-//		    return query.getResultList();
-//		}
-//    
 }

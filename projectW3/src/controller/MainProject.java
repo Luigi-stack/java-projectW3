@@ -54,13 +54,14 @@ public class MainProject {
         	   r1.setPeriodicita(Periodicita.MENSILE);
         	   r1.setTitolo("supercalifragilistichespiralitoso");
         	   
-//        	   int annoRicerca = 2022;
-//               List<elemento> titoliPubblicati = elementoDAO.ricercaPerAnnoPubblicazione(annoRicerca);
-//               
-//               System.out.println("I titoli pubblicati nell'anno " + annoRicerca + ":");
-//               for (elemento libro : titoliPubblicati) {
-//                   System.out.println(libro.getTitolo());
-//               }
+        	   
+        	   int annoRicerca = 2022;
+               List<elemento> titoliPubblicati = el.ricercaPerAnnoPubblicazione(annoRicerca);
+               
+               System.out.println("I titoli pubblicati nell'anno " + annoRicerca + ":");
+               for (elemento libro : titoliPubblicati) {
+                   System.out.println(libro.getTitolo());
+               }
         	   
         	   Utente u1 = new Utente();
         	   u1.setCognome("Iossa");
@@ -76,8 +77,7 @@ public class MainProject {
         	   p1.setRestituzionePrevista(LocalDate.of(2023, 4, 29));
         	   p1.setDataRestituzione(LocalDate.of(2023, 5, 10));
         	   
-        	   prestito.salvaPrestito(p1);
-                              
+        	   prestito.ricercaElementiInPrestito(null);                           
   
      	    
         	
